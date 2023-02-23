@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<link href="css/if.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<h1>My Own Movies</h1>
+<h3><span class="ital">Silent</span> (Colin Cholka, 2022)</h3>
+
+<div class="sideBySide">
+<img class="filmStill" onClick="onClick_SILENT_img01()" src="images/silence_1.jpg" alt="Still from Silent">
+<img class="filmStill" onClick="onClick_SILENT_img02()" src="images/silence_2.png" alt="Still from Silent">
+<img class="filmStill" onClick="onClick_SILENT_img03()" src="images/silence_3.png" alt="Still from Silent">
+</div>
+
+<p class="filmInfo" id="Silent_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis nulla alias atque veniam voluptatem, ex quis. Numquam ex, dolorem nesciunt architecto laborum, atque nostrum quod necessitatibus excepturi tenetur quis similique, eligendi, magnam placeat harum aspernatur deserunt. Eaque deserunt nostrum, quo totam, iste, perferendis optio voluptas laudantium voluptate, inventore animi sapiente.</p>
+
+<button type="button" onClick="gotoMovie()" id="gotoMovie_btn">Go to the Movie</button>
+	
+</body>
+	
+<script>
+
+var gotoMovie_btn = document.getElementById("gotoMovie_btn");
+gotoMovie_btn.style.visibility = "hidden";
+	
+var img01_clicked =  false;
+var img02_clicked = false;
+var img03_clicked = false;
+// SILENT Text Section **********************************************
+var Silent_text = document.getElementById("Silent_text");
+	
+var SILENT00 = "Silent is a film very much about my own mental health. It is about how I struggle with feelings of depression and anxiety. It is about the ways, both healthy and unhealthy, in which I try to escape these terrible feelings, and how no matter how hard I try, no matter how much I do, these thoughts just supress and dampen. It is only a matter of time before they return. I explore how I use music, both listening to it and performing it, to drown out these feelings. I discuss how talking to and spending time with friends is the only time I genuinely feel detatched from these thoughts. Making this piece was difficult for me, exploring my emotions was never a strongsuit of mine and it was difficult to put some of these thoughts into words";
+	
+var SILENT01 = "I mention how I try to escape my own head with music, and sometimes it works, but more often than not, music is never enough. It doesn't matter how loud the music is or how powerful the lyrics are, these dreadful feelingts always come back to me.";
+	
+var SILENT02 = "My environment doesn't help me either. I mention in the film that I always feel so isolated from, well, everything. Namely, I don't really feel like a college student. I still live in the house I grew up in, it is a long and silent commute to classes at which I only stay down there for a couple hours then I am back home.";
+	
+var SILENT03 = "I also include how I dispise my apprearance and my reflection. I often times will hyperfixate on myself and all of my little imperfection in the mirror just wishing I could look the way I feel I should look. It is also why I am always wearing a sweatshirt, even in the heat of summer. I figure that if I give people less to see, they would have less to judge.";
+
+Silent_text.innerHTML = SILENT00;
+
+function onClick_SILENT_img01(){
+	Silent_text.innerHTML = SILENT01;
+	img01_clicked = true;
+	console.log("img01_clicked = " + img01_clicked);
+	revealButton();
+}
+
+function onClick_SILENT_img02(){
+	Silent_text.innerHTML = SILENT02;
+	img02_clicked = true;
+	console.log("img02_clicked = " + img02_clicked);
+	revealButton();
+}
+
+function onClick_SILENT_img03(){
+	Silent_text.innerHTML = SILENT03;
+	img03_clicked = true;
+	console.log("img03_clicked = " + img03_clicked);
+	revealButton();
+}
+
+function revealButton(){
+	if (img01_clicked && img02_clicked && img03_clicked){
+		console.log("REVEAL BUTTON");
+		gotoMovie_btn.style.visibility = "visible";
+	}
+}
+
+function gotoMovie(){
+	window.open("https://youtu.be/hOXOL-srCdo", "_blank")
+}
+
+</script>
+</html>
