@@ -1,0 +1,5 @@
+After Update 2 -
+
+I really like the your idea of image / text / image in terms of the layout so that is something i will experiment with. For interactivity, I was planning on doing it to where when you mouse over the one of the images, the text changes to be a brief yet vivid description of that specific image, then when you click on either image, it changes to another image. It would be great if i could keep both images as a set, but I am not sure how I would go about accomplishing that. So I would be okay with randomizing all of the images.
+
+For a text, this is what will describe "cool_space_wallpaper.jpg" : "Here is an image of three planets. All of which vaguely look like Earth. However, the one in the bottom left of the image seems to be nested inside a significantly darker and larger planet. And the one on the right of the image seems to have rings, and we all know that Earth does not have rings around it. One other thing is that it seems that there are supernova-esque colors in the surrounding space."

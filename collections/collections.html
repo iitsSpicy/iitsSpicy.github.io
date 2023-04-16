@@ -1,0 +1,190 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<link href="css/collections.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="sideBySide">
+<img class="images" id="leftPic" onClick="changeImage()" onMouseOver="changeText()" onMouseOut="defaultText()" src="images/cool_space_wallpaper.jpg" alt="a cool space picture">
+<p class="text" id="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus quos culpa tenetur tempora, repudiandae nulla quam nostrum tempore enim, ea esse, quasi repellat omnis! Placeat quibusdam, similique omnis ipsam quae doloribus autem. Vel quia corporis quo tempora repudiandae eum sunt fuga, laborum, nam amet ut cumque accusamus ipsum necessitatibus! Fuga!</p>
+<img class="images" id="rightPic" onClick="changeImage()" onMouseOver="changeText()" onMouseOut="defaultText()" src="images/cool_space_wallpaper_2.jpg" alt="a cool space picture">
+</div>
+</body>
+</html>
+
+<script>
+//Pics that change
+var leftPic = document.getElementById("leftPic");
+var rightPic = document.getElementById("rightPic");
+var topic = "space";
+var count = 0;
+//List of Pics	
+var space1 = "images/cool_space_wallpaper.jpg";
+var space2 = "images/cool_space_wallpaper_2.jpg";
+	
+var coffee1 = "images/chill_coffee_house.jpg";
+var coffee2 = "images/chill_coffee_house_2.jpg";
+	
+var punk1 = "images/punk_rock_concert.jpg";
+var punk2 = "images/punk_rock_concert_2.jpg";
+	
+var mickey1 = "images/mickey_and_donald.jpg";
+var mickey2 = "images/mickey_and_donald_2.jpg";
+	
+var candy1 = "images/big_candy_store.jpg";
+var candy2 = "images/big_candy_store_2.jpg";
+
+var computer1 = "images/building_a_computer.jpg";
+var computer2 = "images/building_a_computer_2.jpg";
+
+var film1 = "images/independent_filmmaker.jpg";
+var film2 = "images/independent_filmmaker_2.jpg";
+	
+var mkeMap1 = "images/map_of_milwaukee.jpg";
+var mkeMap2 = "images/map_of_mke_2.jpg";
+	
+var broadway1 = "images/opening_broadway.jpg";
+var broadway2 = "images/opening_broadway_2.jpg";
+	
+var saxophone1 = "images/saxophone_ensemble.jpg";
+var saxophone2 = "images/saxophone_ensemble_2.jpg";
+//Text that change and list of text
+var text = document.getElementById("text");
+var TEXT00 = "Mouse over each image to get a description of the images, then click on one of the images to change them!";
+text.innerHTML = TEXT00;
+//Text for each pair
+var SPACE_TEXT = "Here are images of three planets. All of which vaguely look like Earth. However, the one in the bottom left of the left image seems to be nested inside a significantly darker and larger planet. And the one on the right of the image seems to have rings, and we all know that Earth does not have rings around it. One other thing is that it seems that there are supernova-esque colors in the surrounding space. The other image seems significantly brighter and more active. With a multitude of stars dotting the space inbetween the three planets. There seems to be nothing inherently wrong with each of the planets except for the fact that there seems to be a trail of dust that leads off of each planet and moves toward another.";
+	
+var COFFEE_TEXT = "Here are images from the prompt Chill Coffee House. In one, we can see an attempt at a logo for a coffee house one might find on a hole in the wall cafe in the middle of an urban environment. The logo is seemingly of three pots of coffe all next to each other with steam rising from them. The other image is that of the interior of a coffee house. The first thing we see is a cup of coffee in a red mug, but what is off about it is that there is no handle to pick up the mug, and also there seems to be a spoon in the coffee but with the handle down instead of up. We can also see a smattering of chairs and tables and a very low leather couch, I wonder who would want to sit on that one?";
+	
+var PUNK_TEXT = "Here is a set of images depicting a punk rock concert, at least that was the prompt. Very obviously one of the images is in black and white and one is not, and that is about where the differences end. One major flaw in each of the pictures that the crowd looks like just an amalgamation of crudely rendered hands and faces. It seems that AI cannot do well when portraying human anatomy.";
+	
+var MICKEY_TEXT = "Here I tried to get the AI to show two very well known characters; Mickey Mouse and Donald Duck. And where instead of showing them side by side, the AI tried to combine them into two Mickey Mouse bodies with some vaguely Donald Duck esque characteristics. For instance the yellow around mouth of each of them to represent Donald's beak, and the sparse blue clothing to represent Donald's wardrobe.";
+	
+var CANDY_TEXT = "Here are some images from the simple prompt: Big Candy Store. And well, these certainly are candly stores. I wouldn't personally call them big by any stretch of imagination but there is only so much the AI can show with a canvas of 512x512 pixels. One major thing to note is how there only seems to be bright colors and no identifying brands or attempts at brands. There also seems to not be any chocolate. I mean I am not complaining, I much prefer to have fruit flavored candy rather than chocolate but I just thought it would be of great importance to highlight.";
+
+var COMPUTER_TEXT = "With these pictures, I used the prompt: Building a computer. The first image, the one on the left, does not do the best job at depicting that. It shows us just the inside of a computer looking object. To me, it looks like we are seeing some form of motherboard, but where one might expect to see the socket for the CPU, it looks like there are many, many slots for sticks of RAM. The other image however does a better job at showing someone building a computer. It shows an individual at a panel with many switches and dials that seems to look like something a pilot might sit at.";
+	
+var FILM_TEXT = "These images were generated from the prompt: Independent Filmmaker, and I think these are the strangest of all of the pictures generated. The first image shows an individual who seems to have a camera-esque device next to them. This camera seems to have two equal sized portions stacked on top of eachother. This seems to be the AI's attempt to immitate the camera lens and a shotgun microphone on top of said camera. This picture also only reinforces the claim that AI art does not make human anatomy very well at all as the person in the image has some destinctly human traits, but seems to be more of a mash of those traits. The other image simply seems to be a wildly messed up poster for some sort of film, maybe. Perhaps this is the poster for the film that the person in the first image is working on?";
+	
+var MAP_TEXT = "Both of these images are attempts at seeing if the AI could reasonably provide a map of an urban city. These are supposed to be maps of Milwaukee, and I hoped that the AI would at least include some major landmarks in the 'maps' but unfortunately the only thing that even closely resembles a major land mark is the inclusion of a large body of water to represent Lake Michigan, that is really it.";
+	
+var BROADWAY_TEXT = "These two images are, in my opinion, the best that the AI generated. I wanted to see if the AI could give me inages that pretty closely represent what opening night for a Broadway show might be like. And I feel like it got the most of it. Like usual the AI doesn't really do the best job at creating humans but with how these images are, I can look past that. Both of these images seems to be taking place during curtain call for a show. Just to nerd out for one moment, the first image seems to be in the style of West Side Story, and the second seems to be similar to something like Moulin Rouge or Anastasia.";
+	
+var SAXOPHONE_TEXT = "Remember how I said the independent filmmaker were the strangest images, I take that back. These are the strangest images. The prompt I used was 'Saxophone Ensemble' because well, I am in a saxophone ensemble and I was curious to see if the AI could give an accurate depiction of a saxophone. But as you can see, these 'saxophones' are very not good. For starters, they are super too yellow and not really gold, there are many loops that don't really exist in most saxophones. Even the baritone sax doesn't have the loops and curves that these have. And of course, a common theme between a lot of the pictures, the human traits in each of the peopele in the images are vaguely human.";
+
+document.body.style.backgroundColor = "black";
+	
+function changeImage() {
+	count++;
+	if (count == 0) {
+		document.body.style.backgroundColor = "black";
+		leftPic.src = space1;
+		rightPic.src = space2;
+		topic = "space";
+	}
+	
+	if (count == 1) {
+		document.body.style.backgroundColor = "darkRed";
+		leftPic.src = coffee1;
+		rightPic.src = coffee2;
+		topic = "coffee";
+	}
+	
+	if (count == 2) {
+		document.body.style.backgroundColor = "sienna";
+		leftPic.src = punk1;
+		rightPic.src = punk2;
+		topic = "punk";
+	}
+	
+	if (count == 3) {
+		document.body.style.backgroundColor = "midnightBlue";
+		leftPic.src = mickey1;
+		rightPic.src = mickey2
+		topic = "mickey";
+	}
+	
+	if (count == 4) {
+		document.body.style.backgroundColor = "mediumVioletRed";
+		leftPic.src = candy1;
+		rightPic.src = candy2;
+		topic = "candy";
+	}
+	
+	if (count == 5) {
+		document.body.style.backgroundColor = "darkSlateGray";
+		leftPic.src = computer1;
+		rightPic.src = computer2;
+		topic = "computer";
+	}
+	
+	if (count == 6) {
+		document.body.style.backgroundColor = "dimGray";
+		leftPic.src = film1;
+		rightPic.src = film2;
+		topic = "film";
+	}
+	
+	if (count == 7) {
+		document.body.style.backgroundColor = "steelBlue";
+		leftPic.src = mkeMap1;
+		rightPic.src = mkeMap2;
+		topic = "mkeMap";
+	}
+	
+	if (count == 8) {
+		document.body.style.backgroundColor = "indigo";
+		leftPic.src = broadway1;
+		rightPic.src = broadway2;
+		topic = "broadway";
+	}
+	
+	if (count == 9) {
+		document.body.style.backgroundColor = "darkGoldenrod";
+		leftPic.src = saxophone1;
+		rightPic.src = saxophone2;
+		topic = "saxophone";
+		count = -1;
+	}
+}
+
+function changeText() {
+	if (topic == "space") {
+		text.innerHTML = SPACE_TEXT;
+	}
+	if (topic == "coffee") {
+		text.innerHTML = COFFEE_TEXT;
+	}
+	if (topic == "punk") {
+		text.innerHTML = PUNK_TEXT;
+	}
+	if (topic == "mickey") {
+		text.innerHTML = MICKEY_TEXT;
+	}
+	if (topic == "candy") {
+		text.innerHTML = CANDY_TEXT;
+	}
+	if (topic == "computer") {
+		text.innerHTML= COMPUTER_TEXT;
+	}
+	if (topic == "film") {
+		text.innerHTML= FILM_TEXT;
+	}
+	if (topic == "mkeMap") {
+		text.innerHTML= MAP_TEXT;
+	}
+	if (topic == "broadway") {
+		text.innerHTML= BROADWAY_TEXT;
+	}
+	if (topic == "saxophone") {
+		text.innerHTML= SAXOPHONE_TEXT;
+	}
+}
+
+function defaultText() {
+	text.innerHTML = TEXT00;
+}
+</script>
