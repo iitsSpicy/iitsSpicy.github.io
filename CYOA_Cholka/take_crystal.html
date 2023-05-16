@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>A Totally Normal Dungeon Crawl</title>
+<link href="css/CYOA_sample.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class = "background">
+<!-- THE TITLE ABOVE THE VIDEO -->
+
+<h1>Oh man, I'm sorry but you see, now you are cursed. You picked the Cloven Crystal. The last remaining key to unlocking a terribly evil sea leviathan god. </h1>
+
+<!-- THE VIDEO -->
+
+<div class = "vidCenter">    
+<img class = "img" src = "images/cloven_crystal.jpg" alt = "a close up of the cloven crystal">
+</div>
+
+<!-- THE CAPTION or PARAGRAPH UNDERNEATH THE VIDEO -->
+<!-- this appears when the video reaches its end -->
+
+<p id="caption">
+You really picked the wrong choice. Like, this is the bottom of the barrel. There is no going back from this. You have to live with your choice now.
+</p>
+
+<!-- THE TWO BUTTONS UNDERNEATH THE CAPTION - CAN EASILY ADD MORE BUTTONS -->
+<!-- these appear when the video reaches its end -->
+
+<div id="DIVforButtons">
+<p>
+<button id="topButton" onClick="buttonOne()">Live with the consequences of your actions</button>  
+</p>    
+<p>
+<button id="bottomButton" onClick="buttonTwo()">You literally cannot go back, you have been marked by the Leviathan. Just take the crystal.</button>    
+</p>
+</div>
+
+<script>
+
+    document.getElementById('scene').addEventListener('ended',whenVideoEnds,false);
+        
+    var btn1 = document.getElementById("topButton");
+    var btn2 = document.getElementById("bottomButton"); 
+   
+    var caption = document.getElementById("caption");    
+/*
+    caption.style.display = 'none';    
+    btn1.style.display = 'none';
+    btn2.style.display = 'none';        
+*/        
+    function whenVideoEnds(e) {
+		// these three commands make the caption and the 2 buttons visible
+        caption.style.display = 'block';    
+        btn1.style.display = 'block';
+        btn2.style.display = 'block';
+    }
+	
+		// MAKE SURE THE WINDOW OPENS THE FILE NAME on YOUR DIRECTORY 
+		// Lines 63 and 64 are the only places you have to make a change
+        
+    function buttonOne() {
+        window.open ('you_lost_the_game.html','_self',false)
+    }
+        
+    function buttonTwo() {
+        window.open('you_lost_the_game.html','_self',false);
+    }    
+    </script>
+    
+</body>
+</html>

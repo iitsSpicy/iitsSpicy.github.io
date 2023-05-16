@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>A Totally Normal Dungeon Crawl</title>
+<link href="css/CYOA_sample.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class = "background">
+<!-- THE TITLE ABOVE THE VIDEO -->
+
+<h1>Wow, you must have been tired. It is like pitch black in here now. You really are channeling your inner college student huh?</h1>
+
+<!-- THE VIDEO -->
+
+<div class = "vidCenter">    
+<img class = "img" src = "images/rested.gif" alt = "A pair of eyes looking around in darkness">
+</div>
+
+<!-- THE CAPTION or PARAGRAPH UNDERNEATH THE VIDEO -->
+<!-- this appears when the video reaches its end -->
+
+<p id="caption">
+Do you want to strike a torch? Or continue in the darkness?
+</p>
+
+<!-- THE TWO BUTTONS UNDERNEATH THE CAPTION - CAN EASILY ADD MORE BUTTONS -->
+<!-- these appear when the video reaches its end -->
+
+<div id="DIVforButtons">
+<p>
+<button id="topButton" onClick="buttonOne()">Strike a Torch</button>  
+</p>    
+<p>
+<button id="bottomButton" onClick="buttonTwo()">Continue in Darkness</button>    
+</p>
+</div>
+
+<script>
+    document.getElementById('scene').addEventListener('ended',whenVideoEnds,false);
+        
+    var btn1 = document.getElementById("choiceOne");
+    var btn2 = document.getElementById("choiceTwo"); 
+   
+    var caption = document.getElementById("caption");
+/*        
+    caption.style.display = 'none';    
+    btn1.style.display = 'none';
+    btn2.style.display = 'none';
+*/       
+	
+    function whenVideoEnds(e) {
+       // these three commands make the caption and the 2 buttons visible
+        caption.style.display = 'block';    
+        btn1.style.display = 'block';
+        btn2.style.display = 'block';
+    }
+	
+	    function buttonOne() {
+        window.open ('strike_a_torch.html','_self',false)
+    }
+        
+    function buttonTwo() {
+        window.open ('continue_in_dark.html','_self',false)
+    }    
+
+</script>
+    
+</body>
+</html>
